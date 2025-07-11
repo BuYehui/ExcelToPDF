@@ -63,4 +63,6 @@ public class Utils {
         System.out.println("PDF生成完成");
     }
 
+    public static void print() {
+    }
 }

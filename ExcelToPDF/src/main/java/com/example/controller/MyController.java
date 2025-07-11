@@ -3,11 +3,13 @@ package com.example.controller;
 import com.example.utils.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
+import javafx.util.Pair;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,13 +28,22 @@ public class MyController {
     @FXML
     private Pane pdfPane;
 
+    @FXML
+    private ChoiceBox printDirection;
+    @FXML
+    private Button print;
+
     private int index = 1;
     private int totalIndex;
     private String pngPath;
 
     @FXML
     public void initialize() {
-
+        printDirection.getItems().addAll(
+            new Pair<>("01", "纵向"),
+            new Pair<>("02", "横向")
+        );
+        printDirection.setValue("01=纵向");
     }
 
     @FXML
@@ -65,6 +76,11 @@ public class MyController {
         totalIndex = Integer.parseInt(split[1]);
         System.out.println(pngPath);
         page(1);
+    }
+
+    @FXML
+    private void print(){
+        Utils.print();
     }
 
     /**

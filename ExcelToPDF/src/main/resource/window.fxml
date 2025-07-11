@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
@@ -9,8 +10,10 @@
       <Pane fx:id="pdfPane" layoutX="10.0" layoutY="5.0" prefHeight="891.0" prefWidth="630.0" style="-fx-background-color: #CDCDCD;" />
       <Button fx:id="selectFile" layoutX="220.0" layoutY="901.0" mnemonicParsing="false" onAction="#selectFile" text="选择文件" />
       <TextField fx:id="pathField" editable="false" layoutX="14.0" layoutY="901.0" prefHeight="23.0" prefWidth="197.0" promptText="请选择Excel文件" />
-      <Button fx:id="review" layoutX="419.0" layoutY="901.0" mnemonicParsing="false" onAction="#review" text="预览" />
-      <Button fx:id="prePage" layoutX="482.0" layoutY="901.0" mnemonicParsing="false" onAction="#prePage" text="上一页" />
-      <Button fx:id="nextPage" layoutX="547.0" layoutY="901.0" mnemonicParsing="false" onAction="#nextPage" text="下一页" />
+      <Button fx:id="review" layoutX="393.0" layoutY="901.0" mnemonicParsing="false" onAction="#review" text="预览" />
+      <Button fx:id="prePage" layoutX="456.0" layoutY="901.0" mnemonicParsing="false" onAction="#prePage" text="上一页" />
+      <Button fx:id="nextPage" layoutX="517.0" layoutY="901.0" mnemonicParsing="false" onAction="#nextPage" text="下一页" />
+      <ChoiceBox fx:id="printDirection" layoutX="309.0" layoutY="901.0" prefHeight="23.0" prefWidth="64.0" />
+      <Button fx:id="print" layoutX="596.0" layoutY="901.0" mnemonicParsing="false" text="打印" />
    </children>
 </Pane>

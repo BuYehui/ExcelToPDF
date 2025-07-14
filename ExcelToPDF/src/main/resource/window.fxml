@@ -14,6 +14,6 @@
       <Button fx:id="prePage" layoutX="456.0" layoutY="901.0" mnemonicParsing="false" onAction="#prePage" text="上一页" />
       <Button fx:id="nextPage" layoutX="517.0" layoutY="901.0" mnemonicParsing="false" onAction="#nextPage" text="下一页" />
       <ChoiceBox fx:id="printDirection" layoutX="309.0" layoutY="901.0" prefHeight="23.0" prefWidth="64.0" />
-      <Button fx:id="print" layoutX="596.0" layoutY="901.0" mnemonicParsing="false" text="打印" />
+      <Button fx:id="print" onAction="#print" layoutX="596.0" layoutY="901.0" mnemonicParsing="false" text="打印" />
    </children>
 </Pane>

@@ -79,8 +79,8 @@ public class MyController {
     }
 
     @FXML
-    private void print(){
-        Utils.print();
+    private void print() throws IOException {
+        Utils.print("");
     }
 
     /**

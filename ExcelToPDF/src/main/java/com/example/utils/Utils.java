@@ -1,6 +1,11 @@
 package com.example.utils;
 
+import javafx.print.*;
+import javafx.scene.Node;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.printing.PDFPageable;
 import org.apache.pdfbox.rendering.PDFRenderer;
 
 import javax.imageio.ImageIO;
@@ -63,6 +68,27 @@ public class Utils {
         System.out.println("PDF生成完成");
     }
 
-    public static void print() {
+
+    public static void print(String path) throws IOException {
+        printContent(path);
+    }
+
+    private static void printContent(String path) throws IOException {
+//        Node node = new Circle(200, 200, 200); //测试打印
+        // PDF 文件路径
+        File pdfFile = new File(path);
+        PDDocument document = PDDocument.load(pdfFile);
+
+        //获取默认打印机
+        Printer printer = Printer.getDefaultPrinter();
+        PrinterJob job = PrinterJob.createPrinterJob();
+        PageLayout layout = printer.createPageLayout(Paper.A4, PageOrientation.LANDSCAPE, Printer.MarginType.HARDWARE_MINIMUM);
+
+        if (job != null) {
+            boolean success = job.printPage(layout, null);
+            if (success) {
+                job.endJob();
+            }
+        }
     }
 }
